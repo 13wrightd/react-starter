@@ -1,5 +1,0 @@
-{
-    "mongoUrl":"mongodb://admin1:password314@ds145868.mlab.com:45868/westwright",    	//url used to connect to mongo with user and password
-    "accountSid": "AC781a0833a4249069bcf3ae072619d368",  							//twilio SID
-    "authToken": "ff1c34b4d97f8aae459ffb4dcb62efba"      							//twilio auth token
-}
