@@ -56,20 +56,20 @@ db.once('open', function(){
 var io = require('socket.io')(http);
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname+ '/public/index.html');
-  console.log('someone loaded homepage');
+res.sendFile(__dirname+ '/public/index.html');
+    console.log('someone loaded homepage');
 });
 app.get('/*', function (req, res) {
-  res.sendFile(__dirname+ '/public/'+req.path);
+    res.sendFile(__dirname+ '/public/'+req.path);
 });
 
 io.on('connection', function(socket) {
-  socket.on('disconnect', function() {
-    console.log('someone left');
-  });
-  socket.on('test', function(msg) {
-  	io.emit('test', msg);
-  });
+    socket.on('disconnect', function() {
+        console.log('someone left');
+    });
+    socket.on('test', function(msg) {
+        io.emit('test', msg);
+    });
 });
 
 var server = http.listen(app.get('port') , function () {
