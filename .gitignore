@@ -1,2 +1,4 @@
 node_modules
 config.js
+#run this command to not commit config.js
+#git update-index --skip-worktree config.js
