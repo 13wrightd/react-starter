@@ -40690,7 +40690,7 @@
 	        _react2.default.createElement(
 	          "p",
 	          { className: "App-intro" },
-	          "to edit ",
+	          "try to edit ",
 	          _react2.default.createElement(
 	            "code",
 	            null,

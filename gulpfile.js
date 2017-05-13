@@ -10,37 +10,6 @@ var path=require("path");
 var DIST_DIR = path.resolve(__dirname, "public");
 var SRC_DIR = path.resolve(__dirname, "dev");
 
-// gulp.task('webpack', function(done) {
-// // webpack( require('./webpack.config.js') );
-//   console.log('hey');
-//   webpack({
-//   	entry: path.resolve(SRC_DIR, "index.js"),
-//   	output: {
-//   		path: DIST_DIR,
-//   		filename: "bundle.js"
-//   	},
-//   	module: {
-//   		loaders:[
-//   			{
-//   				test:/\.jsx?/,
-//   	 			exclude:/(node_modules)/,
-//   				include: SRC_DIR,
-//   				loader: "babel-loader",
-//   				query: {
-//   					presets: ["react", "es2015"]
-//   				}
-//   			},
-//   			{
-//          			test: /\.css/,
-//           		loaders: ['style-loader', 'css-loader'],
-//           		include: SRC_DIR
-//         		}
-//   		],
-//   	}
-//   });
-//   done();
-// });
-
 gulp.task('webpack', function() {
   console.log('regenerating ');
   return gulp.src('dev/index.js')
@@ -62,8 +31,10 @@ gulp.task('start', function () {
  // , ext: 'js html'
 
   , env: { 'NODE_ENV': 'development' }
-  });
-//  livereload.listen();
+  }).on('restart', function () {
+      console.log('restarted!')
+      setTimeout(function(){browserSync.reload()},1000);
+    });
 
 });
 
@@ -72,13 +43,11 @@ gulp.task('browser-sync', function() {
         // server: {
         //     baseDir: "./"
         // },
-        files: ['server.js','public/*', ],
+        files: ['public/*'],
         proxy:'localhost:3000',
         port: 8000
     });
 });
-
-
 
 
 
