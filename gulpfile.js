@@ -26,7 +26,7 @@ gulp.task('start', function () {
   nodemon({
      script: 'server.js'
     // , ignore: []
-    ,watch:   'server.js'
+    ,watch:   ['server.js', 'config.js']
    
  // , ext: 'js html'
 
