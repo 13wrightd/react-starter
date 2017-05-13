@@ -15,7 +15,7 @@ mongoose.connect(config.mongoUrl);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error: '));
 db.once('open', function(){
-    console.log('database connected');
+    console.log('Database connected.');
 });
 
 // //load schemas
@@ -73,6 +73,5 @@ io.on('connection', function(socket) {
 });
 
 var server = http.listen(app.get('port') , function () {
-    console.log('listening');
     console.log("Express server listening on port %d ", app.get('port'));
 });
