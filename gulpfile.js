@@ -32,8 +32,9 @@ gulp.task('start', function () {
 
   , env: { 'NODE_ENV': 'development' }
   }).on('restart', function () {
-      console.log('restarted!')
-      setTimeout(function(){browserSync.reload()},1000);
+      setTimeout(function(){
+      	//console.log('reload done')
+      	browserSync.reload()},1000);
     });
 
 });
