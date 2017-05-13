@@ -13351,7 +13351,7 @@ var App = function (_Component) {
         _react2.default.createElement(
           "p",
           { className: "App-intro" },
-          "To get started edit ",
+          "to edit ",
           _react2.default.createElement(
             "code",
             null,
